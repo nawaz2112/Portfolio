@@ -6,18 +6,21 @@ const projects = [
     tech: "Python, Streamlit, SQLite",
     desc: "A full-stack hotel management system with features like user authentication, room and guest management, reservation tracking, and service handling.",
     link: "https://github.com/nawaz2112/Hotel-Management-System",
+    liveLink: "", // No live link yet
   },
   {
     name: "Jobs Monitoring Dashboard",
     tech: "Python, Streamlit, PostgreSQL, Apache Airflow, Docker",
     desc: "An interactive dashboard that visualizes batch job statuses and execution metrics from Apache Airflow, with dynamic charts and automated reports.",
     link: "https://github.com/nawaz2112/Jobs-Monitoring-Dashboard",
+    liveLink: "", // No live link yet
   },
   {
-    name: "Shopzee – E-commerce Website",
-    tech: "React.js, Vite, JavaScript, HTML, CSS",
-    desc: "A responsive and modern e-commerce website with dynamic product listings and clean UI built using React and Vite.",
-    link: "https://github.com/nawaz2112/shopzee",
+    name: "Password Manager Web App",
+    tech: "MongoDB, Express.js, React.js, Node.js",
+    desc: "A secure web application built with the MERN stack that allows users to safely store, retrieve, and manage passwords with encryption, user authentication, and an intuitive dashboard.",
+    link: "https://github.com/nawaz2112/Password-Manager",
+    liveLink: "https://your-password-manager-deployed-link.com", // Replace with your actual deployed URL
   }
 ];
 
@@ -30,7 +33,12 @@ const Projects = () => (
           <h4 className="font-bold text-lg">{proj.name}</h4>
           <p className="text-sm italic mb-2">{proj.tech}</p>
           <p>{proj.desc}</p>
-          <a href={proj.link} target="_blank" className="text-blue-500 mt-2 inline-block">GitHub Repo</a>
+          <div className="mt-2">
+            <a href={proj.link} target="_blank" className="text-blue-500 mr-4 inline-block">GitHub Repo</a>
+            {proj.liveLink && (
+              <a href={proj.liveLink} target="_blank" className="text-green-500 inline-block">Live Demo</a>
+            )}
+          </div>
         </div>
       ))}
     </div>
